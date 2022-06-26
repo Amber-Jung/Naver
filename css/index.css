@@ -355,6 +355,34 @@ body {
   font-weight: bold;
 }
 
+.customCheckbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.customCheckbox:focus + .customCheckboxLabel::before {
+  border: 2px solid red;
+  border-radius: 2px;
+}
+.customCheckboxLabel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.customCheckboxLabel::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  background: url(../images/unchecked.svg) no-repeat 0 0/100% 100%;
+}
+.customCheckbox:checked + .customCheckboxLabel::before {
+  background: url(../images/checked.svg);
+}
+
 .errorMessage {
   display: none;
   font-size: 0.75rem;
