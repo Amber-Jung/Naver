@@ -44,14 +44,25 @@
   @include desktop{
     @include boxFixed(600px)
   }
+  
+  .errorMessage{
+    margin-top:8px;
   }
 
+  }
+
+.userPassword{
+  margin-top:10px;
+}
+  
 .userSelectInfo{
   order:1;
-  background: red;
+  margin-top:10px;
 }
 
-
+.loginButton{
+  margin-top:20px;
+}
 
 
 

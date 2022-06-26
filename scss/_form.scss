@@ -1,0 +1,35 @@
+
+// 폼 입력 서식
+.formControl{
+  &__input{
+    width:100%;
+    height: 48px;
+    border:1px solid $boder-default;
+    padding:14px;
+  }
+
+  &__button{
+    width:100%;
+    height: 56px;
+    color:$text-dark;
+    background:$primary;
+    padding:0;
+    border:0;
+    font-weight:bold;
+  }
+  
+}
+
+.errorMessage{
+  display: none;
+  font-size:rem(12px);
+  line-height:1.5; // number 단위 쓰는 것을 권장
+  letter-spacing: -0.1em;
+  color: $warning;
+}
+
+.is--invalid .errorMessage{
+  display: block;
+}
+
+
