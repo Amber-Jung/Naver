@@ -9,7 +9,7 @@
   }
 }
 
-
+// 로고
 .logo{
   @include autoMargin; // 데스크탑과 모바일 공통 내용(항상 먼저)
 
@@ -28,16 +28,29 @@
     @include MarginY(50px);
   }
   
-  &__link { // .logo에 들어가 있는 link (중첩기능)
+  &__link { 
     display:block;
 
     &:focus{
       outline-offset:10px;
     }
   }
-  
-  
 }
+
+// 로그인 폼
+.loginForm__container{
+  @include flexbox(column);
+
+  @include desktop{
+    @include boxFixed(600px)
+  }
+  }
+
+.userSelectInfo{
+  order:1;
+  background: red;
+}
+
 
 
 

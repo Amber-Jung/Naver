@@ -315,6 +315,17 @@ body *, body *::before, body *::after {
   box-sizing: border-box;
 }
 
+.a11yHidden, legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  visibility: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -369,6 +380,26 @@ body {
 }
 .logo__link:focus {
   outline-offset: 10px;
+}
+
+.loginForm__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+@media (min-width: 768px) {
+  .loginForm__container {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.userSelectInfo {
+  order: 1;
+  background: red;
 }
 
 /*# sourceMappingURL=index.css.map */
