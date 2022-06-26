@@ -1,5 +1,7 @@
 @use "sass:math";
+
 $rootUnit: 16px !default;
+$breakpoint: 768px;
 
 @function removeUnit($value){
   @return math.div($value, ($value * 0 + 1));
@@ -8,3 +10,65 @@ $rootUnit: 16px !default;
 @function rem($value, $base: $rootUnit){
   @return removeUnit(math.div($value, $base)) * 1rem;
 }
+
+
+
+@mixin flexbox($dir:row, $wrap:nowrap, $just:flex-start, $align:stretch){
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+  align-items: $align;
+}
+
+
+@mixin flexboxCenter($dir:row, $wrap:nowrap, $just:center, $align:center){
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+  align-items: $align;
+}
+
+
+
+// 미디어쿼리 믹스인
+@mixin mobile{
+  @media (max-width:($breakpoint - 1)){
+    @content;
+  }
+}
+
+@mixin desktop{
+  @media (min-width: $breakpoint){
+    @content;
+  }
+}
+
+// 마진 믹스인
+@mixin autoMargin{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+@mixin MarginX($MarginX :0){ // 마진을 없앨 때도 호출가능
+  margin-left:$MarginX;
+  margin-right:$MarginX;
+}
+
+@mixin MarginY($MarginY){
+  margin-top:$MarginY;
+  margin-bottom:$MarginY;
+}
+
+// 패딩 믹스인 
+@mixin paddingX($paddingX){
+  padding-left:$paddingX;
+  padding-right:$paddingX;
+}
+
+@mixin paddingY($paddingY){
+  padding-top:$paddingY;
+  padding-bottom:$paddingY;
+}
+
