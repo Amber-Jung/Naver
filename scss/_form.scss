@@ -27,7 +27,7 @@
 .customCheckbox{
   appearance: none; //포커스링(키보드 이동시) 잡힘
   position:absolute;
-  top:-1px;
+  top:2px;
   width:24px;
   height:24px;
   // opacity:0; // 포커스링(키보드 이동시) 안 잡힘
@@ -36,7 +36,8 @@
   @include flexbox($align:center);
   min-height: 28px;
   padding-left: 28px;
-  background:url(../images/unchecked.svg) no-repeat 0 0 / 24px 24px;
+  background:url(../images/unchecked.svg) no-repeat 0 50% / 24px 24px;
+  // cursor: pointer; 
   }
 
   &:checked + &Label{
