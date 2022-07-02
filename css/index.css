@@ -482,6 +482,9 @@ body {
   }
 }
 
+.ipSecurityLink {
+  margin-right: 8px;
+}
 @media (max-width: 767px) {
   .ipSecurityLink {
     display: none;
@@ -496,18 +499,33 @@ body {
 .ipSecurity__checkbox {
   -webkit-appearance: none;
   appearance: none;
+  position: absolute;
 }
-.ipSecurity__checkbox:checked + .ipSecurity__label::before {
-  content: "ON";
-  color: #03cf5d;
+.ipSecurity__label {
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 24px;
+  background: #999;
+  border-radius: 22px;
+  padding: 0 4px;
 }
 .ipSecurity__label::before {
-  display: inline-block;
-  width: 2em;
-  text-align: right;
-  content: "OFF";
-  color: #999;
-  font-weight: 700;
+  background: #fff;
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.ipSecurity__checkbox:checked + .ipSecurity__label {
+  background: #03cf5d;
+}
+.ipSecurity__checkbox:checked + .ipSecurity__label::before {
+  transform: translate(100%, -50%);
 }
 
 .loginButton {

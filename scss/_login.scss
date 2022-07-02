@@ -72,40 +72,77 @@
 }
 
 .ipSecurityLink{
-
+  margin-right: 8px;
   @include mobile{
     display: none;
   }
-
-
 }
 
 .ipSecurity{
-
+  
   @include mobile{
     display: none;
   }
 
-    &__checkbox{
-      -webkit-appearance: none;
-      appearance: none;
-    }
 
-    &__checkbox:checked + &__label::before{
-      content: "ON";
-      color:$primary;
-    }
-  
-    &__label::before{
-      display:inline-block;
-      width:2em; // 현재 글자 x 3배 영역
-      text-align:right;
-      content: "OFF";
-      color:$secondary;
-      font-weight:700;
-    }
+// 일반 스위치 컴포넌트
+&__checkbox{
+  -webkit-appearance: none;
+  appearance: none;
+  position:absolute;
+}
+
+&__label{
+  position: relative;
+  display:block;
+  width:44px;
+  height:24px; 
+  background:$silver;
+  border-radius:22px; // border-radius : 10px 10px 15px 15px(x축) / 50px 50px 20px 20px (y축) -> 늘어날 계획(최대치)이 있으면 더 큰 수치를 주어서 안전하게
+  padding:0 4px;
+}
+
+&__label::before{
+  background:$white;
+  position: absolute;
+  content: "";
+  width:18px;
+  height:18px; 
+  top:50%;
+  transform: translateY(-50%);
+  border-radius:50%;
+  transition: all 0.3s;
+}
+
+// 체크박스가 선택되어 있을 때
+
+  &__checkbox:checked + &__label{
+  background:$primary;
+  }
+
+  &__checkbox:checked + &__label::before{
+    transform: translate(100%, -50%);
+ }
 
 }
+
+ // ON/OFF 텍스트 스위치 컴포넌트
+
+//     &__checkbox:checked + &__label::before{
+//       content: "ON";
+//       color:$primary;
+//     }
+  
+//     &__label::before{
+//       display:inline-block;
+//       width:2em; // 현재 글자 x 3배 영역
+//       text-align:right;
+//       content: "OFF";
+//       color:$secondary;
+//       font-weight:700;
+//     }
+
+
 
 .loginButton{
   margin-top:20px;
