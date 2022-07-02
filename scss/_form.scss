@@ -1,4 +1,15 @@
 
+*:focus{
+  outline: 0;
+}
+
+
+*:focus-visible{ //포커스 링 스타일 변경
+  box-shadow: 0 0 2px 2px #ddd;
+  border-radius:4px;
+}
+
+
 // 폼 입력 서식
 .formControl{
   position: relative;
@@ -19,6 +30,10 @@
     border:0;
     font-weight:bold;
   }
+
+  // &:focus-within{ // 초점을 받을 수 있는 곳에만 사용 가능
+  //   background: yellow;
+  // }
   
 }
 
@@ -43,6 +58,7 @@
   &:checked + &Label{
     background-image: url(../images/checked.svg);
   }
+  
 }
  
 

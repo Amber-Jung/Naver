@@ -80,6 +80,7 @@
 
 .ipSecurity{
   
+  
   @include mobile{
     display: none;
   }
@@ -90,7 +91,10 @@
   -webkit-appearance: none;
   appearance: none;
   position:absolute;
+  width:44px;
+  height: 24px;
 }
+
 
 &__label{
   position: relative;

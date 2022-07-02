@@ -344,6 +344,15 @@ body {
   color: #333;
 }
 
+*:focus {
+  outline: 0;
+}
+
+*:focus-visible {
+  box-shadow: 0 0 2px 2px #ddd;
+  border-radius: 4px;
+}
+
 .formControl {
   position: relative;
 }
@@ -500,6 +509,8 @@ body {
   -webkit-appearance: none;
   appearance: none;
   position: absolute;
+  width: 44px;
+  height: 24px;
 }
 .ipSecurity__label {
   position: relative;
