@@ -17,6 +17,19 @@
         <a href="/" class="logo__link"></a>
         <img src="./images/logo.png" srcset="./images/logo.svg" alt="네이버"> <!-- Naver는 고유명사가 아니기 때문에 원래 이름 그대로 사용하는 것이 좋음 -->
       </h1>
+      <div class="customSelect">
+        <label for="selectLanguage" class="a11yHidden customSelect__label">언어선택</label>
+        <select name="selectLanguage" id="selectLanguage" class="customSelect__select">
+          <option value="ko">한국어</option>
+          <option value="en">영어</option>
+          <option value="jp">일본어</option>
+        </select>
+        <svg class="arrowDown" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1000 1000">
+          <g>
+            <path d="M500,820.7L10,281.9l93.3-102.6L500,615.4l396.7-436.1L990,281.9L500,820.7z"/>
+          </g>
+        </svg>
+      </div>
     </header>
     
     <main>
